@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>577167809511-2npvut2n221vu494scrocdpumiehptgv.apps.googleusercontent.com</string>
+	<string>309144948706-8h09agr5gq0h1aso4e3h6ia6ss3khgpf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.577167809511-2npvut2n221vu494scrocdpumiehptgv</string>
+	<string>com.googleusercontent.apps.309144948706-8h09agr5gq0h1aso4e3h6ia6ss3khgpf</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBdF2UQGNAYEtCV0cNbZPI7AufQNVDB8G8</string>
+	<string>AIzaSyCzhTOLDtPHHp9AsKn-_oOctCMM0VQqT-I</string>
 	<key>GCM_SENDER_ID</key>
-	<string>577167809511</string>
+	<string>309144948706</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.flutterthailand.ungexercies</string>
+	<string>shop.appthailand.lekexercise</string>
 	<key>PROJECT_ID</key>
-	<string>ungexercise-873e4</string>
+	<string>lekexecise</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ungexercise-873e4.appspot.com</string>
+	<string>lekexecise.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:577167809511:ios:62d6a09782c1e0166d3b42</string>
+	<string>1:309144948706:ios:387875e441580fdc89f3bb</string>
 </dict>
 </plist>
