@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ungexercies/utility/dialog.dart';
 import 'package:ungexercies/utility/my_style.dart';
@@ -105,13 +107,15 @@ class _CreateAccountState extends State<CreateAccount> {
         title: Text('Create Account'),
       ),
       body: Center(
-        child: Column(
-          children: [
-            buildName(),
-            buildUser(),
-            buildPassword(),
-            buildCreateAccount(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              buildName(),
+              buildUser(),
+              buildPassword(),
+              buildCreateAccount(),
+            ],
+          ),
         ),
       ),
     );
@@ -128,10 +132,31 @@ class _CreateAccountState extends State<CreateAccount> {
               (user?.isEmpty ?? true) ||
               (password?.isEmpty ?? true)) {
             normalDialog(context, 'Have Space ?', 'Please Fill Every Blank');
-          } else {}
+          } else {
+            registerThread();
+          }
         },
         child: Text('Create Account'),
       ),
     );
+  }
+
+  Future<Null> registerThread() async {
+    await Firebase.initializeApp().then((value) async {
+      // normalDialog(context, "Initial Success", 'Good');
+
+      print('initialize Success');
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: user, password: password)
+          .then((value) async {
+        await value.user.updateProfile(displayName: name).then((value) =>
+            Navigator.pushNamedAndRemoveUntil(
+                context, '/myService', (route) => false));
+      }).catchError((value) {
+        normalDialog(context, value.code, value.message);
+      });
+    }).catchError((value) {
+      print('error initial => ${value.message}');
+    });
   }
 }

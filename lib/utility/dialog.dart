@@ -9,13 +9,10 @@ Future<Null> normalDialog(
       title: ListTile(
         leading: MyStyle().showLogo(),
         title: MyStyle().titleH1Dark(title),
+        subtitle: MyStyle().titleH3(message),
       ),
       children: [
-        Row(mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            MyStyle().titleH3(message),
-          ],
-        ),
+       
         Row(mainAxisAlignment: MainAxisAlignment.end,
           children: [
             TextButton(

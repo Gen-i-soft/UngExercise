@@ -46,6 +46,17 @@ class MyStyle {
         ),
       );
 
+
+Widget titleH2dark(String string) => Text(
+        string,
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+          color: darkColor,
+        ),
+      );
+
+  
   Widget titleH3(String string) => Text(
         string,
         style: TextStyle(
@@ -53,6 +64,16 @@ class MyStyle {
           color: darkColor,
         ),
       );
+
+
+      Widget titleH3White(String string) => Text(
+        string,
+        style: TextStyle(
+          fontSize: 14,
+          color: Colors.white54,
+        ),
+      );
+
 
   MyStyle();
 }
