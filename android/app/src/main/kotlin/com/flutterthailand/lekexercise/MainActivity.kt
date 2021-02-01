@@ -1,4 +1,4 @@
-package com.flutterthailand.ungexercies
+package shop.appthailand.lekexercise
 
 import io.flutter.embedding.android.FlutterActivity
 

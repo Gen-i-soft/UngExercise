@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "309144948706",
+    "project_id": "lekexecise",
+    "storage_bucket": "lekexecise.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309144948706:android:b9432ddecb934bd289f3bb",
+        "android_client_info": {
+          "package_name": "shop.appthailand.lekexercise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309144948706-b2s5peipd4sj5q34chud6em81p1mcscq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_hj78puALZ-7ZM9biM5W5YfpWp5EaGcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309144948706-b2s5peipd4sj5q34chud6em81p1mcscq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "309144948706-8h09agr5gq0h1aso4e3h6ia6ss3khgpf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "shop.appthailand.lekexercise"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
