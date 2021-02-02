@@ -37,7 +37,13 @@ class _MyServiceState extends State<MyService> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: [IconButton(icon: Icon(Icons.sync), onPressed: ()=> Navigator.pushNamed(context, '/synDataToFirebase'),)],
+      appBar: AppBar(
+        actions: [IconButton(icon: Icon(Icons.shopping_cart), onPressed: ()=> Navigator.pushNamed(context, '/showChart'),),
+          IconButton(
+            icon: Icon(Icons.sync),
+            onPressed: () => Navigator.pushNamed(context, '/synDataToFirebase'),
+          ),
+        ],
         backgroundColor: MyStyle().primartColor,
         title: Text(titles[index]),
       ),
