@@ -1,8 +1,11 @@
+import 'package:badges/badges.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ungexercies/states/list_product.dart';
+import 'package:ungexercies/states/show_cart.dart';
 import 'package:ungexercies/utility/my_style.dart';
+import 'package:ungexercies/utility/sqlite_helper.dart';
 import 'package:ungexercies/widget/show_catigory.dart';
 import 'package:ungexercies/widget/show_graphp.dart';
 
@@ -16,12 +19,38 @@ class _MyServiceState extends State<MyService> {
   int index = 0;
   String nameLogin;
   Widget currentWidget = ShowCatigory();
+  int totalItems = 0;
+  double total = 0;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     findLogin();
+    readCart();
+  }
+
+  Future<Null> readCart() async {
+    print('##############>>>>readCart work ');
+    try {
+      await SQLiteHelper().readSQLite().then((value) {
+        int index = 0;
+        for (var string in value) {
+          String sumString = string.subtotals;
+          double sumDouble = double.parse(sumString);
+          setState(() {
+            total = total + sumDouble;
+          });
+          index++;
+        }
+
+        setState(() {
+          totalItems = index;
+        });
+      });
+    } catch (e) {
+      print('########### status in SQLite ===>>> ${e.toString()}');
+    }
   }
 
   Future<Null> findLogin() async {
@@ -38,11 +67,25 @@ class _MyServiceState extends State<MyService> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [IconButton(icon: Icon(Icons.shopping_cart), onPressed: ()=> Navigator.pushNamed(context, '/showChart'),),
+        actions: [
           IconButton(
-            icon: Icon(Icons.sync),
-            onPressed: () => Navigator.pushNamed(context, '/synDataToFirebase'),
+            icon: Badge(
+              badgeColor: Colors.red,
+              badgeContent: Text(
+                '$totalItems',
+                style: TextStyle(color: Colors.white),
+              ),
+              child:
+                  Icon(Icons.shopping_basket_outlined, color: Colors.grey[300]),
+            ),
+            onPressed: () {
+               Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShowCart(onAdItem: ()=>readCart(),),));
+            },
           ),
+          // IconButton(
+          //   icon: Icon(Icons.sync),
+          //   onPressed: () => Navigator.pushNamed(context, '/synDataToFirebase'),
+          // ),
         ],
         backgroundColor: MyStyle().primartColor,
         title: Text(titles[index]),
@@ -104,7 +147,7 @@ class _MyServiceState extends State<MyService> {
     return ListTile(
       onTap: () {
         setState(() {
-          currentWidget = ListProduct();
+          currentWidget = ListProduct(onAdItem: ()=>readCart(),);
         });
         Navigator.pop(context);
       },
@@ -126,7 +169,7 @@ class _MyServiceState extends State<MyService> {
             colors: [Colors.white, MyStyle().darkColor],
           ),
         ),
-        currentAccountPicture: MyStyle().showLogo(),
+        currentAccountPicture: MyStyle().showLogo(150,150),
         accountName: MyStyle().titleH1(nameLogin == null ? '' : nameLogin),
         accountEmail: Text('Logined'));
   }
@@ -140,7 +183,7 @@ class _MyServiceState extends State<MyService> {
             await Firebase.initializeApp().then((value) async {
               await FirebaseAuth.instance.signOut().then((value) =>
                   Navigator.pushNamedAndRemoveUntil(
-                      context, '/authen', (route) => false));
+                      context, '/authenn', (route) => false));
             });
           },
           tileColor: Colors.red.shade700,

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:ungexercies/widget/product_box.dart';
 
 class MyStyle {
+    var myFormat = NumberFormat('#,##0.0#', 'en_US');
+    
   Color darkColor = Color(0xff980700);
   Color primartColor = Color(0xffd14500);
   Color lightColor = Color(0xffff7636);
@@ -19,7 +23,8 @@ class MyStyle {
         ),
       );
 
-  Widget showLogo() => Image.asset('images/logo.png');
+  Widget showLogo(double width, double height) => ProductItemBox(imageurl: 'https://firebasestorage.googleapis.com/v0/b/product-52583.appspot.com/o/images%2Fwawa.png?alt=media&token=d8e64dbf-f1e3-4c7b-b63f-c60824ee6d4b',
+     width: width, height: height);
 
   Widget titleH1(String string) => Text(
         string,

@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:239299361795:android:cc2d9d8a04fa4259286236",
+        "mobilesdk_app_id": "1:239299361795:android:dd2d0e8050ed5d04286236",
         "android_client_info": {
           "package_name": "shop.appthailand.lekexercise"
         }
@@ -20,7 +20,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB3bxTomD3gWpUjvwWjCcthqS9Oa-bh0nw"
+          "current_key": "AIzaSyAMGZ6zUnXeXS26GksV68fj_xHDfrBFBow"
         }
       ],
       "services": {
@@ -29,6 +29,13 @@
             {
               "client_id": "239299361795-gndfdg0qha4hdn8bd6khgo568ggm2tfj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "239299361795-b6nraltt738cahltf8qsavdfev9vuja2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "shop.appthailand.lekexercise"
+              }
             }
           ]
         }
