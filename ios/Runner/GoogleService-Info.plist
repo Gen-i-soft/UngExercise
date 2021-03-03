@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>309144948706-8h09agr5gq0h1aso4e3h6ia6ss3khgpf.apps.googleusercontent.com</string>
+	<string>239299361795-b6nraltt738cahltf8qsavdfev9vuja2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.309144948706-8h09agr5gq0h1aso4e3h6ia6ss3khgpf</string>
+	<string>com.googleusercontent.apps.239299361795-b6nraltt738cahltf8qsavdfev9vuja2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCzhTOLDtPHHp9AsKn-_oOctCMM0VQqT-I</string>
+	<string>AIzaSyDUasSMOoRZulQRrI8qFxdOGUokcgT1984</string>
 	<key>GCM_SENDER_ID</key>
-	<string>309144948706</string>
+	<string>239299361795</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>shop.appthailand.lekexercise</string>
 	<key>PROJECT_ID</key>
-	<string>lekexecise</string>
+	<string>product-52583</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lekexecise.appspot.com</string>
+	<string>product-52583.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:309144948706:ios:387875e441580fdc89f3bb</string>
+	<string>1:239299361795:ios:453d4b1af66bc0a0286236</string>
 </dict>
 </plist>
